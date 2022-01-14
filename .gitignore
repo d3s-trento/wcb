@@ -1,0 +1,8 @@
+*.hex
+*.bin
+.*.swp
+obj_zoul
+*.map
+*.elf
+*.zoul
+.DS_Store

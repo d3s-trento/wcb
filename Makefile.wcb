@@ -1,0 +1,13 @@
+WCB_DIR := $(abspath $(dir $(lastword $(MAKEFILE_LIST))))
+
+PROJECTDIRS += $(WCB_DIR)/dev/cc2538
+PROJECTDIRS += $(WCB_DIR)/dev/cc2538/dev
+PROJECTDIRS += $(WCB_DIR)/platform/zoul
+PROJECTDIRS += $(WCB_DIR)/net/glossy
+
+PROJECTDIRS += $(WCB_DIR)/net/wcb
+
+PROJECT_SOURCEFILES += node-id.c
+PROJECT_SOURCEFILES += glossy.c
+PROJECT_SOURCEFILES += wcb.c
+
