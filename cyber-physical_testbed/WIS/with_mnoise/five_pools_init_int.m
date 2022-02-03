@@ -92,25 +92,12 @@ Q = 250*diag([2*0.5*0.5, 0, 1*0.5, 0, 2*0.5, 0, 2, 0, 3, 0,...
 R = 0.1*eye(5);
 [K,~,eigs_] = lqr(AA,BU,Q,R);
 
-%% For diagonal triggering
-load('diag_trig');
-%load('new_diag_trig');
-%load('safe_diag_trig');  % Using only absolute values of y
-%load('safe_sparse_trig');  % Like above, but uses cross terms on colocated measurements
+%% Triggering matrices
 load('safe_sparse_trig_petc');
 % For decentralized... compute sigmas
 Dx = full(Dx);
 De = full(De);
 sigma = diag(Dx)./diag(De);
-
-% cross = load('safe_sparse_cross_trig.mat');
-% Dtrig = full(cross.D);
-%epsilon = cross.epsilon;
-% epsilon = full(epsilon)*3;  % Best trade-off about steady state
-
-%epsilon = epsilon;%^2;
-%% for decentralized
-load('theta_adapt');
 
 %% for TCP communication
 h = 1;  % min
